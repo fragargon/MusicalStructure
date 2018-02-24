@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_item_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/list_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description"
+        tools:src="@drawable/black_circle_playlist"/>
+
+    <LinearLayout
+        android:id="@+id/list_item_container1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/list_item_playlist_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/playlist_name"
+            android:textColor="@color/grey_bright"
+            android:layout_marginBottom="@dimen/margin_4"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"/>
+
+        <TextView
+            android:id="@+id/list_item_playlist_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/playlist_description"
+            android:textColor="@color/grey_bright"
+            android:layout_marginBottom="@dimen/margin_4"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_16"/>
+    </LinearLayout>
+
+</LinearLayout>

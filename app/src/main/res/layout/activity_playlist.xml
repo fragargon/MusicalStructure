@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playlist_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.android.musicalstructure.MainActivity">
+
+    <ImageView
+        style="@style/image_view_background"
+        android:src="@drawable/note" />
+
+    <LinearLayout
+        android:id="@+id/navigation_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout style="@style/linear_layout_button">
+
+            <TextView
+                android:id="@+id/playing"
+                style="@style/nav_text"
+                android:text="@string/now_play" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_button">
+
+            <TextView
+                android:id="@+id/library"
+                style="@style/nav_text"
+                android:text="@string/library" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_button">
+
+            <TextView
+                android:id="@+id/playlist"
+                style="@style/nav_text"
+                android:text="@string/playlist" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_layout_button">
+
+            <TextView
+                android:id="@+id/streaming"
+                style="@style/nav_text"
+                android:text="@string/streaming" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_below="@+id/navigation_text"
+        style="@style/text_description"
+        android:text="@string/main_playlist" />
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/grey_light"
+        android:dividerHeight="1dp"
+        android:drawSelectorOnTop="true"
+        android:layout_below="@+id/tv">
+    </ListView>
+
+</RelativeLayout>

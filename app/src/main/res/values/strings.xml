@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MusicalStructure</string>
+    <string name="main_activity">this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come </string>
+    <string name="main_library">this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come </string>
+    <string name="main_playlist">this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come </string>
+    <string name="main_streaming">this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come
+    this is the  main page, more would be come this is the  main page, more would be come this is the  main page, more would be come </string>
+    <string name="content_description">image</string>
+    <string name="playlist">Playlist</string>
+    <string name="library">Library</string>
+    <string name="streaming">Streaming</string>
+    <string name="now_play">Playing</string>
+    <string name="album_name">Album Name</string>
+    <string name="artiste_name">Artiste Name</string>
+    <string name="playlist_name">this is the Playlist name</string>
+    <string name="playlist_description">This is the description\'s Playlist</string>
+    <string name="track_name">Track Name</string>
+</resources>
