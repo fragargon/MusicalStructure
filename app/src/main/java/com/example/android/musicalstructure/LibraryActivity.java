@@ -37,15 +37,10 @@ public class LibraryActivity extends AppCompatActivity {
 
         // Create an arrayList of albumItems
         final ArrayList<AlbumItems> albumItems = new ArrayList<>();
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
-        albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
+        int n = 15;
+        for(int i=0; i<n; i++){
+            albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
+        }
 
         // Create an {@link ArrayAdapter}, the data source is a list of object
         // whose is from AlbumItems

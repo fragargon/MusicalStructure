@@ -7,10 +7,6 @@
     android:background="@drawable/background"
     tools:context="com.example.android.musicalstructure.MainActivity">
 
-    <ImageView
-        style="@style/image_view_background"
-        android:src="@drawable/note" />
-
     <LinearLayout
         android:id="@+id/navigation_text"
         android:layout_width="match_parent"
