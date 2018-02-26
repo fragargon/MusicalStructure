@@ -19,10 +19,10 @@
 
     <ImageView
         android:id="@+id/horizontal_image_view"
-        android:layout_width="@dimen/margin_192"
-        android:layout_height="@dimen/margin_192"
-        android:layout_marginLeft="@dimen/margin_128"
-        android:layout_marginRight="@dimen/margin_128"
+        android:layout_width="@dimen/margin_256"
+        android:layout_height="@dimen/margin_256"
+        android:layout_marginLeft="@dimen/margin_36"
+        android:layout_marginRight="@dimen/margin_36"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
         tools:src="@drawable/album" />

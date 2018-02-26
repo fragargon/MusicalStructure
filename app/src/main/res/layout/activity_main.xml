@@ -12,6 +12,7 @@
         android:background="@drawable/background"
         tools:context="com.example.android.musicalstructure.MainActivity">
 
+        <!-- This layout is a view for the navigation button -->
         <LinearLayout
             android:id="@+id/navigation_text"
             android:layout_width="match_parent"
@@ -61,19 +62,21 @@
             style="@style/text_description"
             android:text="@string/main_activity" />
 
+        <!-- This scrollView is a view for detail album by track -->
         <HorizontalScrollView
             android:id="@+id/horizontal_scroll_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_8"
             android:scrollbars="horizontal"
-            android:layout_below="@+id/tv">
+            android:layout_above="@id/seek_bar">
 
             <LinearLayout
                 android:id="@+id/track_album_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_24"
                 android:orientation="horizontal"
                 android:layout_gravity="center_vertical">
 
@@ -86,14 +89,17 @@
             android:layout_height="wrap_content"
             android:thumbTint="@color/blue_light"
             android:progressTint="@color/blue_light"
-            android:layout_below="@id/horizontal_scroll_view"
+            android:layout_above="@+id/music_action"
             android:padding="@dimen/margin_8"
             />
 
+
+        <!-- This layout is a view for the music action (skip, play, next) -->
         <LinearLayout
+            android:id="@+id/music_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/seek_bar"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="@dimen/margin_24"
             android:layout_marginBottom="@dimen/margin_16"
             android:orientation="horizontal">
