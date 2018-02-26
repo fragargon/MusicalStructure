@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
             albumArray.add(mAlbumName);
             trackArray.add(mTrackName);
 
-            View v = layoutInflater.inflate(R.layout.hscroll_view_item, mLinearLayout, false);
-            mLinearLayout = v.findViewById(R.id.horizontal_player_view);
+            View v = layoutInflater.inflate(R.layout.hscroll_view_item, mHorizontalScrollView, false);
             mImageView = v.findViewById(R.id.horizontal_image_view);
             mAlbumNameView = v.findViewById(R.id.horizontal_album_name);
             mTrackNameView = v.findViewById(R.id.horizontal_track_name);
@@ -66,14 +65,12 @@ public class MainActivity extends AppCompatActivity {
         // Instantiate the view LayoutInflater
         layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         mHorizontalScrollView = findViewById(R.id.horizontal_scroll_view);
-        mLinearLayout = findViewById(R.id.track_album_view);
 
         // Find the views and instantiate Id's
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
         tvStreaming = findViewById(R.id.streaming);
-        mHorizontalScrollView = findViewById(R.id.horizontal_scroll_view);
         mLinearLayout = findViewById(R.id.track_album_view);
         mAlbumName = getResources().getString(R.string.album_name);
         mTrackName = getResources().getString(R.string.track_name);
