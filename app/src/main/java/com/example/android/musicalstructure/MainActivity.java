@@ -10,18 +10,19 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     // Initialize global variable
-    ImageButton btnLib, btnPl, btnStr;
+    ImageButton iBtn_previous, iBtn_play, iBtn_next;
     TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
     LayoutInflater layoutInflater;
     LinearLayout mLinearLayout;
     HorizontalScrollView mHorizontalScrollView;
-    String mAlbumName,  mTrackName;
+    String mAlbumName,  mTrackName, mPrevious, mPlay, mNext;
     ImageView mImageView;
     TextView mAlbumNameView, mTrackNameView;
     ArrayList<Integer> thumbArray;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
             mImageView.setImageResource(thumbArray.get(0));
             mAlbumNameView.setText(albumArray.get(0));
-            mTrackNameView.setText(trackArray.get(0));
+            mTrackNameView.setText((i+1) + ". " + trackArray.get(0));
 
             if (i==(n)-1) {
                 mHorizontalScrollView.setBackgroundResource(android.R.color.transparent);
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         mHorizontalScrollView = findViewById(R.id.horizontal_scroll_view);
 
         // Find the views and instantiate Id's
+        iBtn_previous = findViewById(R.id.skip_previous_button);
+        iBtn_play = findViewById(R.id.play_button);
+        iBtn_next = findViewById(R.id.skip_next_button);
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
@@ -74,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
         mLinearLayout = findViewById(R.id.track_album_view);
         mAlbumName = getResources().getString(R.string.album_name);
         mTrackName = getResources().getString(R.string.track_name);
+        mPrevious = getResources().getString(R.string.skip_previous);
+        mPlay = getResources().getString(R.string.play);
+        mNext = getResources().getString(R.string.skip_next);
 
         // Method to show the HorizontalScrollView
         setUpHorizontalSView();
@@ -107,5 +114,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        //Set a click listener on the skip previous ImageButton
+        iBtn_previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, mPrevious,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Set a click listener on the play ImageButton
+        iBtn_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, mPlay,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Set a click listener on the skip next ImageButton
+        iBtn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, mNext,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

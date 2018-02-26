@@ -26,4 +26,7 @@
     <string name="playlist_name">this is the Playlist name</string>
     <string name="playlist_description">This is the description\'s Playlist</string>
     <string name="track_name">Track Name</string>
+    <string name="skip_previous">This click skip the \n previous album track \n to play that song</string>
+    <string name="play">this click play the music \n the MediaPlayer Class has not \n be implemented yet. </string>
+    <string name="skip_next">This click skip the \n next album track \n to play that song</string>
 </resources>

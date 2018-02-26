@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/horizontal_player_view"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="@dimen/margin_4"
@@ -12,7 +13,7 @@
         android:id="@+id/horizontal_album_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/album_name"
+        tools:text="@string/album_name"
         android:textSize="24sp"
         android:textColor="@color/grey_bright" />
 
@@ -22,13 +23,13 @@
         android:layout_height="@dimen/margin_192"
         android:contentDescription="@string/content_description"
         android:scaleType="centerCrop"
-        android:src="@drawable/album" />
+        tools:src="@drawable/album" />
 
     <TextView
         android:id="@+id/horizontal_track_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/track_name"
+        tools:text="@string/track_name"
         android:textColor="@color/grey_bright" />
 
 </LinearLayout>
