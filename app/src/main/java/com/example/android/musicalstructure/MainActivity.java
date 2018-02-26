@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set a click listener on the skip next ImageButton
+        //Set a click listener on the skip previous ImageButton
         iBtn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
