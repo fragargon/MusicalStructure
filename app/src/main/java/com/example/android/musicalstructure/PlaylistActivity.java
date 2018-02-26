@@ -37,7 +37,7 @@ public class PlaylistActivity extends AppCompatActivity {
 
         // Create an arrayList of albumItems
         final ArrayList<AlbumItems> albumItems = new ArrayList<>();
-        int n = 15;
+        int n = 50;
         for(int i=0; i<n; i++){
             albumItems.add(new AlbumItems(playlistName, playlistDescription, R.drawable.black_circle_playlist));
         }
@@ -82,7 +82,7 @@ public class PlaylistActivity extends AppCompatActivity {
         tvStreaming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PlaylistActivity.this, StreamingActivity.class );
+                Intent i = new Intent(PlaylistActivity.this, SearchActivity.class );
                 startActivity(i);
             }
         });

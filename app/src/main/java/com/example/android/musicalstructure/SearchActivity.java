@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by xav on 18/02/18.
  */
 
-public class StreamingActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     // Initialize global variable
     TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
@@ -34,7 +34,7 @@ public class StreamingActivity extends AppCompatActivity {
         tvLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StreamingActivity.this, LibraryActivity.class );
+                Intent i = new Intent(SearchActivity.this, LibraryActivity.class );
                 startActivity(i);
             }
         });
@@ -43,7 +43,7 @@ public class StreamingActivity extends AppCompatActivity {
         tvPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StreamingActivity.this, PlaylistActivity.class );
+                Intent i = new Intent(SearchActivity.this, PlaylistActivity.class );
                 startActivity(i);
             }
         });
@@ -52,7 +52,7 @@ public class StreamingActivity extends AppCompatActivity {
         tvPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(StreamingActivity.this, MainActivity.class );
+                Intent i = new Intent(SearchActivity.this, MainActivity.class );
                 startActivity(i);
             }
         });

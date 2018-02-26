@@ -49,7 +49,7 @@
             <TextView
                 android:id="@+id/streaming"
                 style="@style/nav_text"
-                android:text="@string/streaming" />
+                android:text="@string/search" />
 
         </LinearLayout>
     </LinearLayout>
