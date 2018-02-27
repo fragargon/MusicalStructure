@@ -46,7 +46,7 @@
         <LinearLayout style="@style/linear_layout_button">
 
             <TextView
-                android:id="@+id/streaming"
+                android:id="@+id/search"
                 style="@style/nav_text"
                 android:text="@string/search" />
 

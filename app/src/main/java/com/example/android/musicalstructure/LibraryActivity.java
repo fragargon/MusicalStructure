@@ -8,18 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-
-/**
- * {@link LibraryActivity}
- */
 
 public class LibraryActivity extends AppCompatActivity {
 
     // Initialize global variable
-    TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
+    TextView tvPlaying, tvLibrary, tvPlaylist, tvSearch;
     GridView gridView;
 
     @Override
@@ -31,19 +26,21 @@ public class LibraryActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvStreaming = findViewById(R.id.streaming);
+        tvSearch = findViewById(R.id.search);
         String artisteName = getResources().getString(R.string.artiste_name);
         String albumName = getResources().getString(R.string.album_name);
 
-        // Create an arrayList of albumItems
+        /** Create an {@link ArrayList} from AlbumItems Class (constructor) */
         final ArrayList<AlbumItems> albumItems = new ArrayList<>();
         int n = 50;
         for(int i=0; i<n; i++){
             albumItems.add(new AlbumItems(artisteName, albumName, R.drawable.album));
         }
 
-        // Create an {@link ArrayAdapter}, the data source is a list of object
-        // whose is from AlbumItems
+        /**
+         * Create {@link albumItems} a gridView
+         * the data source is a list of object from the ArrayList.
+         */
         GridItemAdapter adapter = new GridItemAdapter(this, albumItems);
         gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
@@ -51,8 +48,8 @@ public class LibraryActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(LibraryActivity.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(LibraryActivity.this, MainActivity.class );
+                startActivity(i);
 
             }
         });
@@ -60,7 +57,7 @@ public class LibraryActivity extends AppCompatActivity {
         // Set color to the TextView of the current activity
         tvLibrary.setTextColor(getResources().getColor(R.color.blue_light));
 
-        // Set a click listener on the library TextView
+        // This listener gets triggered whenever Playing TextView is clicked.
         tvPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +66,7 @@ public class LibraryActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the playlist TextView
+        // This listener gets triggered whenever Playlist TextView is clicked.
         tvPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,8 +75,8 @@ public class LibraryActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the streaming TextView
-        tvStreaming.setOnClickListener(new View.OnClickListener() {
+        // This listener gets triggered whenever Search TextView is clicked.
+        tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LibraryActivity.this, SearchActivity.class );

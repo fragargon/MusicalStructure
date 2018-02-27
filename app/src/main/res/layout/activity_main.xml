@@ -49,12 +49,20 @@
             <LinearLayout style="@style/linear_layout_button">
 
                 <TextView
-                    android:id="@+id/streaming"
+                    android:id="@+id/search"
                     style="@style/nav_text"
                     android:text="@string/search" />
 
             </LinearLayout>
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_playlist"
+            style="@style/image_button"
+            android:layout_below="@+id/navigation_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_16"
+            android:src="@drawable/black_circle_playlist_add"/>
 
         <TextView
             android:id="@+id/tv"
@@ -67,9 +75,9 @@
             android:id="@+id/horizontal_scroll_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/margin_16"
             android:scrollbars="horizontal"
-            android:layout_above="@id/seek_bar">
+            android:layout_below="@id/add_playlist">
 
             <LinearLayout
                 android:id="@+id/track_album_view"
@@ -83,13 +91,21 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+        <TextView
+            style="@style/text_description"
+            android:layout_above="@id/seek_bar"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_4"
+            android:text="00:00"
+            />
+
         <SeekBar
             android:id="@+id/seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:thumbTint="@color/blue_light"
             android:progressTint="@color/blue_light"
-            android:layout_above="@+id/music_action"
+            android:layout_below="@id/horizontal_scroll_view"
             android:padding="@dimen/margin_8"
             />
 

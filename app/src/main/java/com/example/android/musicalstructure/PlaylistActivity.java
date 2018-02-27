@@ -12,14 +12,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-/**
- * Created by xav on 18/02/18.
- */
-
 public class PlaylistActivity extends AppCompatActivity {
 
     // Initialize global variable
-    TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
+    TextView tvPlaying, tvLibrary, tvPlaylist, tvSearch;
     ListView listView;
 
     @Override
@@ -31,11 +27,11 @@ public class PlaylistActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvStreaming = findViewById(R.id.streaming);
+        tvSearch = findViewById(R.id.search);
         String playlistName = getResources().getString(R.string.playlist_name);
         String playlistDescription = getResources().getString(R.string.playlist_description);
 
-        // Create an arrayList of albumItems
+        /** Create an {@link ArrayList} from AlbumItems Class (constructor) */
         final ArrayList<AlbumItems> albumItems = new ArrayList<>();
         int n = 50;
         for(int i=0; i<n; i++){
@@ -43,8 +39,10 @@ public class PlaylistActivity extends AppCompatActivity {
                     R.drawable.ic_menu));
         }
 
-        // Create an {@link ArrayAdapter}, the data source is a list of object
-        // whose is from AlbumItems
+        /**
+         * Create {@link albumItems} a gridView
+         * the data source is a list of object from the ArrayList.
+         */
         ListItemAdapter adapter = new ListItemAdapter(this, albumItems);
         listView = findViewById(R.id.list_view);
         listView.setAdapter(adapter);
@@ -61,7 +59,7 @@ public class PlaylistActivity extends AppCompatActivity {
         // Set color to the TextView of the current activity
         tvPlaylist.setTextColor(getResources().getColor(R.color.blue_light));
 
-        // Set a click listener on the library TextView
+        // This listener gets triggered whenever Library TextView is clicked.
         tvLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +68,7 @@ public class PlaylistActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the playlist TextView
+        // This listener gets triggered whenever Playing TextView is clicked.
         tvPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,8 +77,8 @@ public class PlaylistActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the streaming TextView
-        tvStreaming.setOnClickListener(new View.OnClickListener() {
+        // This listener gets triggered whenever Search TextView is clicked.
+        tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(PlaylistActivity.this, SearchActivity.class );

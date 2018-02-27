@@ -7,10 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-/**
- * Created by xav on 18/02/18.
- */
-
 public class SearchActivity extends AppCompatActivity {
 
     // Initialize global variable
@@ -25,12 +21,12 @@ public class SearchActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvStreaming = findViewById(R.id.streaming);
+        tvStreaming = findViewById(R.id.search);
 
         // Set color to the TextView of the current activity
         tvStreaming.setTextColor(getResources().getColor(R.color.blue_light));
 
-        // Set a click listener on the library TextView
+        // This listener gets triggered whenever Library TextView is clicked.
         tvLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +35,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the playlist TextView
+        // This listener gets triggered whenever Playlist TextView is clicked.
         tvPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +44,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the streaming TextView
+        // This listener gets triggered whenever Playing TextView is clicked.
         tvPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

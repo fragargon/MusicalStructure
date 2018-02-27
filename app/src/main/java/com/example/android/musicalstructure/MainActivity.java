@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     // Initialize global variable
-    ImageButton iBtn_previous, iBtn_play, iBtn_next;
+    ImageButton iBtn_previous, iBtn_play, iBtn_next, iBtn_playlistAdd;
     TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
     LayoutInflater layoutInflater;
     LinearLayout mLinearLayout;
@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> thumbArray;
     ArrayList<String> albumArray, trackArray;
 
-    // Create a method to show the HorizontalScrollView
+    /**
+     *  Create a method to display album track in a horizontalScrollView.
+     *  it contains the ImageView album, TextView album's name and track's name.
+     *  It is populated through ArrayList and inflate in View hscroll_view_item.
+     */
     private void setUpHorizontalSView() {
         int n = 15;
         int i;
@@ -63,18 +67,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Instantiate the view LayoutInflater
+        // Find the views and instantiate Id's Layout
         layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         mHorizontalScrollView = findViewById(R.id.horizontal_scroll_view);
 
         // Find the views and instantiate Id's
+        iBtn_playlistAdd = findViewById(R.id.add_playlist);
         iBtn_previous = findViewById(R.id.skip_previous_button);
         iBtn_play = findViewById(R.id.play_button);
         iBtn_next = findViewById(R.id.skip_next_button);
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvStreaming = findViewById(R.id.streaming);
+        tvStreaming = findViewById(R.id.search);
         mLinearLayout = findViewById(R.id.track_album_view);
         mAlbumName = getResources().getString(R.string.album_name);
         mTrackName = getResources().getString(R.string.track_name);
@@ -88,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         // Set color to the TextView of the current activity
         tvPlaying.setTextColor(getResources().getColor(R.color.blue_light));
 
-        // Set a click listener on the library TextView
+        // This listener gets triggered whenever Library TextView is clicked.
         tvLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the playlist TextView
+        // This listener gets triggered whenever Playlist TextView is clicked.
         tvPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Set a click listener on the streaming TextView
+        // This listener gets triggered whenever Search TextView is clicked.
         tvStreaming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set a click listener on the skip previous ImageButton
+        // This listener gets triggered whenever the skip previous ImageButton is clicked.
         iBtn_previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set a click listener on the play ImageButton
+        // This listener gets triggered whenever the play ImageButton is clicked.
         iBtn_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,12 +138,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set a click listener on the skip previous ImageButton
+        // This listener gets triggered whenever the next ImageButton is clicked.
         iBtn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, mNext,
                         Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // This listener gets triggered whenever addPlaylist ImageButton is clicked.
+        iBtn_playlistAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, LibraryActivity.class);
+                startActivity(i);
             }
         });
 

@@ -13,6 +13,7 @@
         android:id="@+id/horizontal_album_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_4"
         tools:text="@string/album_name"
         android:textSize="24sp"
         android:textColor="@color/grey_bright" />
@@ -31,6 +32,7 @@
         android:id="@+id/horizontal_track_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_4"
         tools:text="@string/track_name"
         android:textColor="@color/grey_bright" />
 
