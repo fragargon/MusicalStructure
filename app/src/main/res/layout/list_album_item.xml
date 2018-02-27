@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_item_container"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/list_item_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/content_description"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_16"
+        tools:src="@drawable/ic_menu"/>
 
     <ImageView
         android:id="@+id/list_item_icon"
@@ -18,8 +27,9 @@
         android:id="@+id/list_item_container1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:orientation="vertical">
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/list_item_icon">
 
         <TextView
             android:id="@+id/list_item_playlist_name"
@@ -42,4 +52,4 @@
             android:layout_marginStart="@dimen/margin_16"/>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

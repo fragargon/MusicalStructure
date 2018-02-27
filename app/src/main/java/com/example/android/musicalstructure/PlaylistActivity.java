@@ -39,7 +39,8 @@ public class PlaylistActivity extends AppCompatActivity {
         final ArrayList<AlbumItems> albumItems = new ArrayList<>();
         int n = 50;
         for(int i=0; i<n; i++){
-            albumItems.add(new AlbumItems(playlistName, playlistDescription, R.drawable.black_circle_playlist));
+            albumItems.add(new AlbumItems(playlistName, playlistDescription, R.drawable.black_circle_playlist,
+                    R.drawable.ic_menu));
         }
 
         // Create an {@link ArrayAdapter}, the data source is a list of object

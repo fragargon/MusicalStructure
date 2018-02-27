@@ -50,17 +50,21 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
         // Get {@link AlbumItems} object located at this position in the list
         AlbumItems currentAlbum = getItem(position);
 
-        // Find the TextView, get and set from the current AlbumItems object
+        // Find the TextView, get and set the text from the current AlbumItems object
         TextView albumName = listItemView.findViewById(R.id.list_item_playlist_name);
         albumName.setText(currentAlbum.getAlbumName());
 
-        // Find the TextView, get and set from the current AlbumItems object
+        // Find the TextView, get and set the text from the current AlbumItems object
         TextView artistName = listItemView.findViewById(R.id.list_item_playlist_description);
         artistName.setText(currentAlbum.getArtisteName());
 
-        // Find the ImageView, get and set from the current AlbumItems object
+        // Find the ImageView, get and set the image from the current AlbumItems object
         ImageView albumView = listItemView.findViewById(R.id.list_item_icon);
         albumView.setImageResource(currentAlbum.getAlbumResourceId());
+
+        // Find the ImageView, get and set the icon from the current AlbumItems object
+        ImageView iconView = listItemView.findViewById(R.id.list_item_menu);
+        iconView.setImageResource(currentAlbum.getIconResourceId());
 
         // Return the whole list item layout
         return listItemView;
