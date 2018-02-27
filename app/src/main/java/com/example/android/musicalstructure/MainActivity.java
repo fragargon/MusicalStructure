@@ -55,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
             mAlbumNameView.setText(albumArray.get(0));
             mTrackNameView.setText((i+1) + ". " + trackArray.get(0));
 
+            // This listener gets triggered whenever the Layout  is clicked (child of horizontalScrollView)
+            final int finalI = i;
+            mLinearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, (albumArray.get(finalI) + "\n"
+                                    + trackArray.get(finalI)), Toast.LENGTH_LONG).show();
+                }
+            });
+
             if (i==(n)-1) {
                 mHorizontalScrollView.setBackgroundResource(android.R.color.transparent);
             }
