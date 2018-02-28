@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,7 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
      */
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -65,6 +66,22 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
         // Find the ImageView, get and set the icon from the current AlbumItems object
         ImageView iconView = listItemView.findViewById(R.id.list_item_menu);
         iconView.setImageResource(currentAlbum.getIconResourceId());
+
+        // Bind the abstract method to the iconView and gives parameters to its interface
+        iconView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Position " + "blabla" + position, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // Bind the abstract method to the albumView and gives parameters to its interface
+        albumView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Position " + "Player-blabla" + position, Toast.LENGTH_LONG).show();
+            }
+        });
 
         // Return the whole list item layout
         return listItemView;

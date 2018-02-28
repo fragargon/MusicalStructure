@@ -56,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
             mTrackNameView.setText((i+1) + ". " + trackArray.get(0));
 
             // This listener gets triggered whenever the Layout  is clicked (child of horizontalScrollView)
-            final int finalI = i;
             mLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, (albumArray.get(finalI) + "\n"
-                                    + trackArray.get(finalI)), Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(MainActivity.this, LibraryActivity.class);
+                    startActivity(i);
                 }
             });
 
@@ -161,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         iBtn_playlistAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, LibraryActivity.class);
+                Intent i = new Intent(MainActivity.this, PlaylistActivity.class);
                 startActivity(i);
             }
         });
