@@ -1,6 +1,7 @@
 package com.example.android.musicalstructure;
 
 import android.app.Activity;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,8 +39,9 @@ public class GridItemAdapter extends ArrayAdapter<AlbumItems> {
      * @return The View for the position in the AdapterView.
      */
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -52,15 +54,21 @@ public class GridItemAdapter extends ArrayAdapter<AlbumItems> {
 
         // Find the TextView, get and set from the current AlbumItems object
         TextView albumName = listItemView.findViewById(R.id.grid_item_album_name);
-        albumName.setText(currentAlbum.getAlbumName());
+        if (currentAlbum != null) {
+            albumName.setText(currentAlbum.getAlbumName());
+        }
 
         // Find the TextView, get and set from the current AlbumItems object
         TextView artistName = listItemView.findViewById(R.id.grid_item_artist_name);
-        artistName.setText(currentAlbum.getArtisteName());
+        if (currentAlbum != null) {
+            artistName.setText(currentAlbum.getArtisteName());
+        }
 
         // Find the ImageView, get and set from the current AlbumItems object
         ImageView albumView = listItemView.findViewById(R.id.grid_item_album);
-        albumView.setImageResource(currentAlbum.getAlbumResourceId());
+        if (currentAlbum != null) {
+            albumView.setImageResource(currentAlbum.getAlbumResourceId());
+        }
 
         // Return the whole list item layout
         return listItemView;

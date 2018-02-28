@@ -1,6 +1,9 @@
 package com.example.android.musicalstructure;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,8 @@ import java.util.ArrayList;
 
 public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
 
+    private Context mContext;
+
     /**
      * This is a custom constructor.
      * The context is used to inflate the layout file.
@@ -29,6 +34,8 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
     public ListItemAdapter(Activity context, ArrayList<AlbumItems> listItem) {
         // Initialize the ArrayAdapter's internal storage for the context
         super(context, 0 , listItem);
+
+        mContext = context;
     }
 
     /**
@@ -39,8 +46,9 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
      * @return The View for the position in the AdapterView.
      */
 
+    @NonNull
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -53,19 +61,27 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
 
         // Find the TextView, get and set the text from the current AlbumItems object
         TextView albumName = listItemView.findViewById(R.id.list_item_playlist_name);
-        albumName.setText(currentAlbum.getAlbumName());
+        if (currentAlbum != null) {
+            albumName.setText(currentAlbum.getAlbumName());
+        }
 
         // Find the TextView, get and set the text from the current AlbumItems object
         TextView artistName = listItemView.findViewById(R.id.list_item_playlist_description);
-        artistName.setText(currentAlbum.getArtisteName());
+        if (currentAlbum != null) {
+            artistName.setText(currentAlbum.getArtisteName());
+        }
 
         // Find the ImageView, get and set the image from the current AlbumItems object
         ImageView albumView = listItemView.findViewById(R.id.list_item_icon);
-        albumView.setImageResource(currentAlbum.getAlbumResourceId());
+        if (currentAlbum != null) {
+            albumView.setImageResource(currentAlbum.getAlbumResourceId());
+        }
 
         // Find the ImageView, get and set the icon from the current AlbumItems object
         ImageView iconView = listItemView.findViewById(R.id.list_item_menu);
-        iconView.setImageResource(currentAlbum.getIconResourceId());
+        if (currentAlbum != null) {
+            iconView.setImageResource(currentAlbum.getIconResourceId());
+        }
 
         // Bind the abstract method to the iconView and gives parameters to its interface
         iconView.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +95,7 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
         albumView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Position " + "Player-blabla" + position, Toast.LENGTH_LONG).show();
+                mContext.startActivity(new Intent(mContext, MainActivity.class));
             }
         });
 
