@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 
 public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
 
+    // // Initialize global variable
     private Context mContext;
 
     /**
@@ -48,7 +50,7 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
 
     @NonNull
     @Override
-    public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if(listItemView == null) {
@@ -87,7 +89,10 @@ public class ListItemAdapter extends ArrayAdapter<AlbumItems> {
         iconView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Position " + "blabla" + position, Toast.LENGTH_LONG).show();
+                FragmentActivity activity = (FragmentActivity)(mContext);
+                FragmentManager fm = activity.getSupportFragmentManager();
+                PlaylistDialog menuDialog = new PlaylistDialog();
+                menuDialog.show(fm, "fragment_alert");
             }
         });
 

@@ -17,4 +17,17 @@
     <string name="skip_previous">This click skip the \n previous album track \n to play that song</string>
     <string name="play">this click play the music \n the MediaPlayer Class has not \n be implemented yet. </string>
     <string name="skip_next">This click skip the \n next album track \n to play that song</string>
+    <string name="dialog_title">Playlist Menu</string>
+
+    <!-- string array use in PlaylistDialog DialogFragment-->
+    <string-array name="dialog_playlist_array">
+        <item>add a playlist</item>
+        <item>random play</item>
+        <item>queuing</item>
+        <item>play</item>
+        <item>sort</item>
+        <item>delete</item>
+        <item>rename</item>
+    </string-array>
+
 </resources>
