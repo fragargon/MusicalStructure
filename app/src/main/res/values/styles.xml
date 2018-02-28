@@ -7,7 +7,13 @@
 
     <style name="ThemeMusicalStructure" parent="Theme.AppCompat.DayNight.DarkActionBar" />
 
-    //common image View style
+    // customize alertDialog theme
+    <style name="MyDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:background">@color/blue_grey</item>
+        <item name="android:textColor">@color/grey_bright</item>
+    </style>
+
+    // common image View style
     <style name="image_view_background">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>

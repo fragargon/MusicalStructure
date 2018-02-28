@@ -18,6 +18,7 @@
     <string name="play">this click play the music \n the MediaPlayer Class has not \n be implemented yet. </string>
     <string name="skip_next">This click skip the \n next album track \n to play that song</string>
     <string name="dialog_title">Playlist Menu</string>
+    <string name="to_do">TODO</string>
 
     <!-- string array use in PlaylistDialog DialogFragment-->
     <string-array name="dialog_playlist_array">
