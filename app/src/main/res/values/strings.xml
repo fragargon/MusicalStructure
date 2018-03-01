@@ -22,14 +22,14 @@
 
     <!-- string array use in PlaylistDialog DialogFragment-->
     <string-array name="dialog_playlist_array">
-        <item>Add a playlist</item>
-        <item>Random play</item>
-        <item>Queuing</item>
-        <item>Play</item>
-        <item>Sort</item>
-        <item>Search</item>
-        <item>Delete</item>
-        <item>Rename</item>
+        <item>Add a playlist (Library)</item>
+        <item>Random play (Player)</item>
+        <item>Queuing (ToDo)</item>
+        <item>Play (Player)</item>
+        <item>Sort (ToDo)</item>
+        <item>Search (Search)</item>
+        <item>Delete (ToDo)</item>
+        <item>Rename (ToDo)</item>
     </string-array>
 
 </resources>
