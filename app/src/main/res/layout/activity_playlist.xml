@@ -9,6 +9,7 @@
 
     <ImageView
         style="@style/image_view_background"
+        android:contentDescription="@string/content_description"
         android:src="@drawable/note" />
 
     <LinearLayout
