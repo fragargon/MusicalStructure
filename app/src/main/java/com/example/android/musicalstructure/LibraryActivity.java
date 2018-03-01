@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class LibraryActivity extends AppCompatActivity {
 
     // Initialize global variable
-    TextView tvPlaying, tvLibrary, tvPlaylist, tvSearch;
+    TextView tvPlaying, tvLibrary, tvPlaylist;
     GridView gridView;
 
     @Override
@@ -26,7 +26,6 @@ public class LibraryActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvSearch = findViewById(R.id.search);
         String artisteName = getResources().getString(R.string.artiste_name);
         String albumName = getResources().getString(R.string.album_name);
 
@@ -71,15 +70,6 @@ public class LibraryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LibraryActivity.this, PlaylistActivity.class );
-                startActivity(i);
-            }
-        });
-
-        // This listener gets triggered whenever Search TextView is clicked.
-        tvSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(LibraryActivity.this, SearchActivity.class );
                 startActivity(i);
             }
         });

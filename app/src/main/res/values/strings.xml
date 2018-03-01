@@ -19,17 +19,18 @@
     <string name="skip_next">This click skip the \n next album track \n to play that song</string>
     <string name="dialog_title">Playlist Menu</string>
     <string name="to_do">TODO</string>
+    <string name="time_song">00:00</string>
 
     <!-- string array use in PlaylistDialog DialogFragment-->
     <string-array name="dialog_playlist_array">
-        <item>Add a playlist (Library)</item>
-        <item>Random play (Player)</item>
-        <item>Queuing (ToDo)</item>
-        <item>Play (Player)</item>
-        <item>Sort (ToDo)</item>
-        <item>Search (Search)</item>
-        <item>Delete (ToDo)</item>
-        <item>Rename (ToDo)</item>
+        <item>Add to playlist</item>
+        <item>Random play</item>
+        <item>Queuing</item>
+        <item>Play</item>
+        <item>Sort</item>
+        <item>Search</item>
+        <item>Delete</item>
+        <item>Rename</item>
     </string-array>
 
 </resources>

@@ -12,6 +12,10 @@
         android:background="@drawable/background"
         tools:context="com.example.android.musicalstructure.MainActivity">
 
+        <ImageView
+            style="@style/image_view_background"
+            android:src="@drawable/note" />
+
         <!-- This layout is a view for the navigation button -->
         <LinearLayout
             android:id="@+id/navigation_text"
@@ -45,15 +49,6 @@
                     android:text="@string/playlist" />
 
             </LinearLayout>
-
-            <LinearLayout style="@style/linear_layout_button">
-
-                <TextView
-                    android:id="@+id/search"
-                    style="@style/nav_text"
-                    android:text="@string/search" />
-
-            </LinearLayout>
         </LinearLayout>
 
         <ImageButton
@@ -61,8 +56,10 @@
             style="@style/image_button"
             android:layout_below="@+id/navigation_text"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginRight="@dimen/margin_16"
-            android:src="@drawable/black_circle_playlist_add"/>
+            android:layout_marginEnd="@dimen/margin_16"
+            android:src="@drawable/black_circle_playlist_add" />
 
         <TextView
             android:id="@+id/tv"
@@ -95,8 +92,10 @@
             style="@style/text_description"
             android:layout_above="@id/seek_bar"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/margin_4"
-            android:text="00:00"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:text="@string/time_song"
             />
 
         <SeekBar

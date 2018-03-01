@@ -42,15 +42,6 @@
                 android:text="@string/playlist" />
 
         </LinearLayout>
-
-        <LinearLayout style="@style/linear_layout_button">
-
-            <TextView
-                android:id="@+id/search"
-                style="@style/nav_text"
-                android:text="@string/search" />
-
-        </LinearLayout>
     </LinearLayout>
 
     <TextView

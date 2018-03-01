@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
@@ -19,12 +20,15 @@ public class PlaylistDialog extends DialogFragment {
 
     // Declare global variable
     String toDo;
+    String [] plArray;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         //
+        Resources res = getResources();
+        plArray = res.getStringArray(R.array.dialog_playlist_array);
         toDo = getResources().getString(R.string.to_do);
 
         // Build the dialog. Use the Builder class for convenient dialog construction
@@ -32,7 +36,7 @@ public class PlaylistDialog extends DialogFragment {
         // Set the title for dialog
         builder.setTitle(R.string.dialog_title)
                 // Set the items for the list. We use an array.
-                .setItems(R.array.dialog_playlist_array, new DialogInterface.OnClickListener() {
+                .setItems(plArray, new DialogInterface.OnClickListener() {
                     // send the selected index to the activity
                     public void onClick(DialogInterface dialog, int i) {
                         switch (i) {
@@ -45,7 +49,7 @@ public class PlaylistDialog extends DialogFragment {
                                 startActivity(iR);
                                 break;
                             case 2: // Queuing
-                                Toast.makeText(getContext(), toDo,
+                                Toast.makeText(getContext(), toDo + "\n" + plArray[i],
                                         Toast.LENGTH_SHORT).show();
                                 break;
                             case 3: // Play
@@ -53,19 +57,19 @@ public class PlaylistDialog extends DialogFragment {
                                 startActivity(iM);
                                 break;
                             case 4: // Sort
-                                Toast.makeText(getContext(), toDo,
+                                Toast.makeText(getContext(), toDo + "\n" + plArray[i],
                                         Toast.LENGTH_SHORT).show();
                                 break;
                             case 5: // Search
-                                Intent iS = new Intent(getContext(), SearchActivity.class);
-                                startActivity(iS);
+                                Toast.makeText(getContext(), toDo + "\n" + plArray[i],
+                                        Toast.LENGTH_SHORT).show();
                                 break;
                             case 6: // Delete
-                                Toast.makeText(getContext(), toDo,
+                                Toast.makeText(getContext(), toDo + "\n" + plArray[i],
                                         Toast.LENGTH_SHORT).show();
                                 break;
                             case 7: // Rename
-                                Toast.makeText(getContext(), toDo,
+                                Toast.makeText(getContext(), toDo + "\n" + plArray[i],
                                         Toast.LENGTH_SHORT).show();
                                 break;
                         }

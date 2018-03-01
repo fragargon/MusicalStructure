@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class PlaylistActivity extends AppCompatActivity {
 
     // Initialize global variable
-    TextView tvPlaying, tvLibrary, tvPlaylist, tvSearch;
+    TextView tvPlaying, tvLibrary, tvPlaylist;
     ListView listView;
 
     @Override
@@ -25,7 +25,6 @@ public class PlaylistActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvSearch = findViewById(R.id.search);
         String playlistName = getResources().getString(R.string.playlist_name);
         String playlistDescription = getResources().getString(R.string.playlist_description);
 
@@ -62,15 +61,6 @@ public class PlaylistActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(PlaylistActivity.this, MainActivity.class );
-                startActivity(i);
-            }
-        });
-
-        // This listener gets triggered whenever Search TextView is clicked.
-        tvSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(PlaylistActivity.this, SearchActivity.class );
                 startActivity(i);
             }
         });

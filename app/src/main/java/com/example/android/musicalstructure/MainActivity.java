@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Initialize global variable
     ImageButton iBtn_previous, iBtn_play, iBtn_next, iBtn_playlistAdd;
-    TextView tvPlaying, tvLibrary, tvPlaylist, tvStreaming;
+    TextView tvPlaying, tvLibrary, tvPlaylist;
     LayoutInflater layoutInflater;
     LinearLayout mLinearLayout;
     HorizontalScrollView mHorizontalScrollView;
@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
         tvPlaying = findViewById(R.id.playing);
         tvLibrary = findViewById(R.id.library);
         tvPlaylist = findViewById(R.id.playlist);
-        tvStreaming = findViewById(R.id.search);
         mLinearLayout = findViewById(R.id.track_album_view);
         mAlbumName = getResources().getString(R.string.album_name);
         mTrackName = getResources().getString(R.string.track_name);
@@ -116,15 +115,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, PlaylistActivity.class);
-                startActivity(i);
-            }
-        });
-
-        // This listener gets triggered whenever Search TextView is clicked.
-        tvStreaming.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, SearchActivity.class);
                 startActivity(i);
             }
         });
