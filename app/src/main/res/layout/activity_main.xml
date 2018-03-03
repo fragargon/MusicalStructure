@@ -6,7 +6,6 @@
     android:fillViewport="true">
 
     <RelativeLayout
-        android:id="@+id/playing_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
@@ -63,12 +62,6 @@
             android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/black_circle_playlist_add" />
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_below="@+id/navigation_text"
-            style="@style/text_description"
-            android:text="@string/main_activity" />
-
         <!-- This scrollView is a view for detail album by track -->
         <HorizontalScrollView
             android:id="@+id/horizontal_scroll_view"
@@ -92,8 +85,9 @@
 
         <!-- This textView and seekBar are views to give user song duration -->
         <TextView
+            android:id="@+id/time"
             style="@style/text_description"
-            android:layout_above="@id/seek_bar"
+            android:layout_below="@id/horizontal_scroll_view"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="@dimen/margin_16"
@@ -107,14 +101,13 @@
             android:layout_height="wrap_content"
             android:thumbTint="@color/blue_light"
             android:progressTint="@color/blue_light"
-            android:layout_below="@id/horizontal_scroll_view"
+            android:layout_below="@id/time"
             android:padding="@dimen/margin_8"
             />
 
 
         <!-- This layout is a view for the music action (skip, play, next) -->
         <LinearLayout
-            android:id="@+id/music_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

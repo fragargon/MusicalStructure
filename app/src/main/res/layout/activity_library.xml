@@ -45,12 +45,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_below="@+id/navigation_text"
-        style="@style/text_description"
-        android:text="@string/main_library" />
-
+    <!-- This layout is a album gridView -->
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
@@ -59,7 +54,7 @@
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
         android:gravity="center"
-        android:layout_below="@+id/tv">
+        android:layout_below="@+id/navigation_text">
     </GridView>
 
 </RelativeLayout>

@@ -3,11 +3,9 @@
     <string name="main_activity">this</string>
     <string name="main_library">this</string>
     <string name="main_playlist">this </string>
-    <string name="main_streaming">this </string>
     <string name="content_description">image</string>
     <string name="playlist">Playlist</string>
     <string name="library">Library</string>
-    <string name="search">Search</string>
     <string name="now_play">Playing</string>
     <string name="album_name">Album Name</string>
     <string name="artiste_name">Artiste Name</string>

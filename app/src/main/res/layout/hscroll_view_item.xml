@@ -2,13 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/horizontal_player_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="@dimen/margin_4"
     android:gravity="center_horizontal">
 
+    <!-- This is a view for the HorizontalScrollView layout -->
     <TextView
         android:id="@+id/horizontal_album_name"
         android:layout_width="wrap_content"

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             albumArray.add(mAlbumName);
             trackArray.add(mTrackName);
 
-            // Inflate the layout and the object into the View
+            // Inflate the layout and the views into the GroupView
             View v = layoutInflater.inflate(R.layout.hscroll_view_item, mHorizontalScrollView, false);
             mImageView = v.findViewById(R.id.horizontal_image_view);
             mAlbumNameView = v.findViewById(R.id.horizontal_album_name);

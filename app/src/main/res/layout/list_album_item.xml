@@ -2,18 +2,20 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <!-- This is a view for the ListItemAdapter -->
     <ImageView
         android:id="@+id/list_item_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/content_description"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
         tools:src="@drawable/ic_menu"/>
 
     <ImageView
@@ -24,12 +26,12 @@
         tools:src="@drawable/black_circle_playlist"/>
 
     <LinearLayout
-        android:id="@+id/list_item_container1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:layout_toRightOf="@id/list_item_icon">
+        android:layout_toRightOf="@id/list_item_icon"
+        android:layout_toEndOf="@id/list_item_icon">
 
         <TextView
             android:id="@+id/list_item_playlist_name"
