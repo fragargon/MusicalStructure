@@ -37,23 +37,25 @@ public class MainActivity extends AppCompatActivity {
         int n = 15;
         int i;
 
-        thumbArray = new ArrayList<>();
-        albumArray = new ArrayList<>();
-        trackArray = new ArrayList<>();
+        thumbArray = new ArrayList<>(); // Initialize Arrays for drawable list.
+        albumArray = new ArrayList<>(); // Initialize Arrays for string list.
+        trackArray = new ArrayList<>(); // Initialize Arrays for string list.
+
 
         for(i=0; i<n; i++){
             thumbArray.add(R.drawable.album);
             albumArray.add(mAlbumName);
             trackArray.add(mTrackName);
 
+            // Inflate the layout and the object into the View
             View v = layoutInflater.inflate(R.layout.hscroll_view_item, mHorizontalScrollView, false);
             mImageView = v.findViewById(R.id.horizontal_image_view);
             mAlbumNameView = v.findViewById(R.id.horizontal_album_name);
             mTrackNameView = v.findViewById(R.id.horizontal_track_name);
 
-            mImageView.setImageResource(thumbArray.get(0));
-            mAlbumNameView.setText(albumArray.get(0));
-            mTrackNameView.setText((i+1) + ". " + trackArray.get(0));
+            mImageView.setImageResource(thumbArray.get(i));
+            mAlbumNameView.setText(albumArray.get(i));
+            mTrackNameView.setText((i+1) + ". " + trackArray.get(i));
 
             // This listener gets triggered whenever the Layout  is clicked (child of horizontalScrollView)
             mLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -76,11 +78,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Find the views and instantiate Id's Layout
+        // Instantiate LayoutInflater service.
         layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        // Find the views and instantiate Id's.
         mHorizontalScrollView = findViewById(R.id.horizontal_scroll_view);
-
-        // Find the views and instantiate Id's
         iBtn_playlistAdd = findViewById(R.id.add_playlist);
         iBtn_previous = findViewById(R.id.skip_previous_button);
         iBtn_play = findViewById(R.id.play_button);

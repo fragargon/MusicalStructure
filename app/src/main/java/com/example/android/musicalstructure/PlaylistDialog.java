@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 /**
  * Created a {@link DialogFragment} alert Dialog which shows
- * a menu for the playlist activity
+ * a simple menu for the playlist activity
  */
 
 public class PlaylistDialog extends DialogFragment {
@@ -26,7 +26,7 @@ public class PlaylistDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        //
+        // initialize the variables.
         Resources res = getResources();
         plArray = res.getStringArray(R.array.dialog_playlist_array);
         toDo = getResources().getString(R.string.to_do);
@@ -36,6 +36,7 @@ public class PlaylistDialog extends DialogFragment {
         // Set the title for dialog
         builder.setTitle(R.string.dialog_title)
                 // Set the items for the list. We use an array.
+                // Set an listener on each item
                 .setItems(plArray, new DialogInterface.OnClickListener() {
                     // send the selected index to the activity
                     public void onClick(DialogInterface dialog, int i) {

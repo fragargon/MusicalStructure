@@ -10,6 +10,7 @@
         android:contentDescription="@string/content_description"
         android:src="@drawable/note" />
 
+    <!-- This layout is a view for the music action (skip, play, next) -->
     <LinearLayout
         android:id="@+id/navigation_text"
         android:layout_width="match_parent"

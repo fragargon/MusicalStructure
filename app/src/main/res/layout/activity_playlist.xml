@@ -12,6 +12,7 @@
         android:contentDescription="@string/content_description"
         android:src="@drawable/note" />
 
+    <!-- This layout is a view for the music action (skip, play, next) -->
     <LinearLayout
         android:id="@+id/navigation_text"
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
         style="@style/text_description"
         android:text="@string/main_playlist" />
 
+    <!-- This layout is a listView -->
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"

@@ -90,6 +90,7 @@
             </LinearLayout>
         </HorizontalScrollView>
 
+        <!-- This textView and seekBar are views to give user song duration -->
         <TextView
             style="@style/text_description"
             android:layout_above="@id/seek_bar"
