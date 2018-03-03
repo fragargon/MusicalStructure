@@ -21,7 +21,7 @@
 
     <!-- string array use in PlaylistDialog DialogFragment-->
     <string-array name="dialog_playlist_array">
-        <item>Add to playlist</item>
+        <item>Add to library</item>
         <item>Random play</item>
         <item>Queuing</item>
         <item>Play</item>
