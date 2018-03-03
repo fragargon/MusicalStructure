@@ -35,8 +35,8 @@
         <item name="android:background">@drawable/background</item>
         <item name="android:padding">@dimen/margin_4</item>
         <item name="android:layout_below">@id/navigation_text</item>
-        <item name="android:layout_marginTop">@dimen/margin_16</item>
-        <item name="android:layout_marginBottom">@dimen/margin_16</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
         <item name="android:textColor">@color/grey_light</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>

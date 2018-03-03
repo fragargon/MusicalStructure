@@ -6,7 +6,7 @@
     <string name="content_description">image</string>
     <string name="playlist">Playlist</string>
     <string name="library">Library</string>
-    <string name="now_play">Playing</string>
+    <string name="now_play">Player</string>
     <string name="album_name">Album Name</string>
     <string name="artiste_name">Artiste Name</string>
     <string name="playlist_name">this is the Playlist name</string>

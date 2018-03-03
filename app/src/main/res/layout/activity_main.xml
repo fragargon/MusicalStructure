@@ -76,10 +76,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8"
-                android:layout_marginBottom="@dimen/margin_24"
+                android:layout_marginBottom="@dimen/margin_8"
                 android:orientation="horizontal"
                 android:layout_gravity="center_vertical">
-
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -90,6 +89,7 @@
             android:layout_below="@id/horizontal_scroll_view"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_16"
             android:layout_marginRight="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_16"
             android:text="@string/time_song"
@@ -99,6 +99,7 @@
             android:id="@+id/seek_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_8"
             android:thumbTint="@color/blue_light"
             android:progressTint="@color/blue_light"
             android:layout_below="@id/time"
@@ -108,11 +109,12 @@
 
         <!-- This layout is a view for the music action (skip, play, next) -->
         <LinearLayout
+            android:id="@+id/action_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/margin_24"
-            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_below="@+id/seek_bar"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_4"
             android:orientation="horizontal">
 
             <LinearLayout style="@style/linear_layout_button">
